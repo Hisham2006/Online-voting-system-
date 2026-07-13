@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote — Online Voting System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">&larr; Back</a>
+        <h1>🙋 All Polls</h1>
+    </header>
+
+    <main>
+
+        <!-- ============ ALL POLLS LIST SECTION ============ -->
+        <section class="card">
+            <h2>Available Polls</h2>
+            <button id="refreshBtn">🔄 Refresh Polls</button>
+            <div id="pollsList"></div>
+        </section>
+
+    </main>
+
+    <!-- ============ VOTE / RESULTS MODAL ============ -->
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal">
+            <button id="closeModalBtn" class="close-btn">&times;</button>
+            <h2 id="modalQuestion"></h2>
+
+            <div id="voteFormSection">
+                <label for="voterEmail">Your Email</label>
+                <input type="email" id="voterEmail" placeholder="you@example.com" required>
+
+                <div id="modalOptions"></div>
+
+                <button id="submitVoteBtn">Submit Vote</button>
+                <p id="voteMessage" class="message"></p>
+            </div>
+
+            <hr>
+
+            <div id="resultsSection">
+                <h3>Live Results</h3>
+                <div id="resultsList"></div>
+                <button id="viewResultsBtn">View / Refresh Results</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="user.js"></script>
+</body>
+</html>

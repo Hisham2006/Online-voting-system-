@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin — Online Voting System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">&larr; Back</a>
+        <h1>🛠️ Admin Panel</h1>
+    </header>
+
+    <main>
+
+        <!-- ============ CREATE POLL SECTION ============ -->
+        <section class="card">
+            <h2>Create a New Poll</h2>
+            <form id="createPollForm">
+                <label for="question">Poll Question</label>
+                <input type="text" id="question" placeholder="e.g. What is your favorite language?" required>
+
+                <label>Options (2 to 4)</label>
+                <input type="text" class="option-input" placeholder="Option 1" required>
+                <input type="text" class="option-input" placeholder="Option 2" required>
+                <input type="text" class="option-input" placeholder="Option 3 (optional)">
+                <input type="text" class="option-input" placeholder="Option 4 (optional)">
+
+                <button type="submit">Create Poll</button>
+            </form>
+            <p id="createPollMessage" class="message"></p>
+        </section>
+
+        <!-- ============ EXISTING POLLS (ADMIN VIEW) ============ -->
+        <section class="card">
+            <h2>Existing Polls</h2>
+            <button id="refreshBtn">🔄 Refresh Polls</button>
+            <div id="pollsList"></div>
+        </section>
+
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

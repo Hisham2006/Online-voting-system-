@@ -1,0 +1,56 @@
+{
+  "info": {
+    "name": "Online Voting System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Poll",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"What is your favorite programming language?\",\n  \"options\": [\"Java\", \"Python\", \"JavaScript\"]\n}"
+        },
+        "url": { "raw": "http://localhost:8080/polls", "host": ["localhost"], "port": "8080", "path": ["polls"] }
+      }
+    },
+    {
+      "name": "Get All Polls",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8080/polls", "host": ["localhost"], "port": "8080", "path": ["polls"] }
+      }
+    },
+    {
+      "name": "Get Poll By Id",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8080/polls/{{pollId}}", "host": ["localhost"], "port": "8080", "path": ["polls", "{{pollId}}"] }
+      }
+    },
+    {
+      "name": "Vote On Poll",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"voterEmail\": \"student@example.com\",\n  \"selectedOption\": \"Java\"\n}"
+        },
+        "url": { "raw": "http://localhost:8080/polls/{{pollId}}/vote", "host": ["localhost"], "port": "8080", "path": ["polls", "{{pollId}}", "vote"] }
+      }
+    },
+    {
+      "name": "Get Poll Results",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8080/polls/{{pollId}}/results", "host": ["localhost"], "port": "8080", "path": ["polls", "{{pollId}}", "results"] }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "pollId", "value": "REPLACE_WITH_ACTUAL_POLL_ID" }
+  ]
+}
